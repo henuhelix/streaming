@@ -11,9 +11,9 @@ services:
       - "8282:8282/tcp"
     volumes:
       - ./sls.conf:/etc/sls/sls.conf
-  srtla-receiver_test:
+  srtla-receiver:
     image: ${REPOSITORY_NAME}/${PROJECT_NAME}-belabox-srtla-receiver:${GLOBAL_VERSION}
-    container_name: srtla-receiver_test
+    container_name: srtla-receiver
     restart: unless-stopped
     ports:
       - "5000:5000/udp"
