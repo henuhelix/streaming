@@ -18,6 +18,11 @@ docker compose up -d
 + Docker for Windows (it's important to check their requirements) https://docs.docker.com/docker-for-windows/install/
 + Router that can Port-Forward to your windows machine (also check windows firewall)
 
+
+## Pre-Requirements (linux)
++ docker-ce
++ docker-compose
+
 ## Installation (mixed)
 + download https://github.com/moo-the-cow/streaming/archive/refs/heads/main.zip extract do a folder that will be used permamently
 + go into the folder `streaming` in that extracted directory
