@@ -15,7 +15,7 @@ the streaming folder contains the docker compose for running the containers that
 + make sure docker for windows is started and the containers are switched to "linux containers" (see https://docs.docker.com/docker-for-windows/)
 + open a Terminal (suggestion: https://www.microsoft.com/store/productId/9N8G5RFZ9XK3 ) browse to that directory and type
 ```
-docker-compose up -d
+docker-compose -f docker-compose-noalbs.yml up -d
 ```
 
 ## Troubleshooting
