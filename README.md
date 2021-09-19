@@ -42,7 +42,7 @@ docker-compose -f docker-compose-noalbs-v2.yml up -d
 + this setup is highly flexible - if you don't wanna use noalbs just configure the `docker-compose.yml` file and replace it with some other SRT solution. you can just re-configure ports and the container name via environment variables that are used in the `entrypoint.sh` file
 + If you want to use v1 for some reason just run
 ```
-docker-compose --env-file -env.v1 -f docker-compose-noalbs-v1.yml up -d
+docker-compose --env-file .env.v1 -f docker-compose-noalbs-v1.yml up -d
 ```
 instead
 
