@@ -1,14 +1,13 @@
 version: '3.8'
 services:
   noalbs-sls:
-    image: ${REPOSITORY_NAME}/noalbs-sls:${GLOBAL_VERSION}
+    image: ${REPOSITORY_NAME}/noalbs-v2-sls:${GLOBAL_VERSION}
     container_name: noalbs-sls
     restart: unless-stopped
     stdin_open: true
     tty: true
-    command: npm start
     volumes:
-      - ./config.json:/noalbs/config.json
+      - ./config-v2.json:/noalbs/config.json
     depends_on:
       - "noalbs-srtla"
   noalbs-srtla:

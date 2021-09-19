@@ -43,6 +43,17 @@ services:
     stdin_open: true
     tty: true
     command: npm start
+  noalbs-v2-sls:
+    platform: linux/amd64
+    build:
+        context: .
+        dockerfile: ./Dockerfile.noalbs-v2-sls
+    image: ${REPOSITORY_NAME}/noalbs-v2-sls:${GLOBAL_VERSION}
+    container_name: noalbs-v2-sls
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    command: cargo run
   srtla:
     platform: linux/amd64
     build:

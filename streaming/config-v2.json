@@ -1,0 +1,93 @@
+{
+  "user": {
+    "id": null,
+    "name": "xxxxxx"
+  },
+  "switcher": {
+    "bitrateSwitcherEnabled": true,
+    "requestInterval": {
+      "secs": 2,
+      "nanos": 0
+    },
+    "onlySwitchWhenStreaming": true,
+    "autoSwitchNotification": true,
+    "triggers": {
+      "low": 800,
+      "rtt": 2500,
+      "offline": null
+    },
+    "switchingScenes": {
+      "normal": "live",
+      "low": "low",
+      "offline": "offline"
+    },
+    "streamServers": [
+      {
+        "streamServer": {
+          "type": "SrtLiveServer",
+          "statsUrl": "http://xxxxxxx:8282/stats",
+          "publisher": "publish/live/feed1",
+          "maxLowRetry": 3
+        },
+        "name": "SLS",
+        "priority": 0,
+        "overrideScenes": null,
+        "dependsOn": {
+          "name": "nginx",
+          "backupScenes": {
+            "normal": "Scene 3",
+            "low": "low",
+            "offline": "Scene 2"
+          }
+        }
+      }
+    ]
+  },
+  "software": {
+    "type": "Obs",
+    "host": "xxxxxxxx",
+    "password": "xxxxx",
+    "port": 4444
+  },
+  "chat": {
+    "platform": "Twitch",
+    "username": "xxxxx",
+    "admins": [
+      "xxxx"
+    ],
+    "prefix": "!",
+    "enablePublicCommands": false,
+    "enableModCommands": true,
+    "enableAutoStopStreamOnHostOrRaid": true,
+    "commands": {
+      "Fix": {
+        "permission": null,
+        "alias": [
+          "f"
+        ]
+      },
+      "Switch": {
+        "permission": "Mod",
+        "alias": [
+          "ss"
+        ]
+      },
+      "Bitrate": {
+        "permission": null,
+        "alias": [
+          "b"
+        ]
+      }
+    }
+  },
+  "optionalScenes": {
+    "starting": null,
+    "ending": null,
+    "privacy": "privacy"
+  },
+  "optionalOptions": {
+    "twitchTranscodingCheck": false,
+    "twitchTranscodingRetries": 5,
+    "twitchTranscodingDelaySeconds": 15
+  }
+}

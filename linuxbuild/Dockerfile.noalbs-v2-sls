@@ -1,0 +1,9 @@
+# build stage
+FROM rust:alpine3.14
+RUN apk update &&\
+    apk upgrade &&\ 
+    apk add --no-cache git openssl-dev musl-dev
+WORKDIR /noalbs
+RUN git clone --branch v2 https://github.com/715209/nginx-obs-automatic-low-bitrate-switching.git .
+RUN cargo build --release
+CMD ./target/release/noalbs
