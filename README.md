@@ -5,7 +5,7 @@ the streaming folder contains the docker compose for running the containers that
 just modify the `.env` file and increase the version number (see changelog)
 and rerun
 ```
-docker compose up -d
+docker-compose -f docker-compose-noalbs-2.yml up -d
 ```
 
 ## Changelog:
