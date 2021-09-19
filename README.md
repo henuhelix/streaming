@@ -5,7 +5,7 @@ the streaming folder contains the docker compose for running the containers that
 just modify the `.env` file and increase the version number (see changelog)
 and rerun
 ```
-docker-compose -f docker-compose-noalbs-2.yml up -d
+docker-compose -f docker-compose-noalbs-v2.yml up -d
 ```
 
 ## Changelog:
@@ -32,7 +32,7 @@ docker-compose -f docker-compose-noalbs-2.yml up -d
 + make sure docker for windows is started and the containers are switched to "linux containers" (see https://docs.docker.com/docker-for-windows/)
 + open a Terminal (suggestion: https://www.microsoft.com/store/productId/9N8G5RFZ9XK3 ) browse to that directory and type
 ```
-docker-compose -f docker-compose-noalbs-2.yml up -d
+docker-compose -f docker-compose-noalbs-v2.yml up -d
 ```
 
 ## Troubleshooting
@@ -40,6 +40,11 @@ docker-compose -f docker-compose-noalbs-2.yml up -d
 + you can access the stats page via the ip of your windows machine using port 8282 in your browser if you need to fetch the statistics (bitrate/tts) that can be used in OBS
 + the linux setup is quite similar, just skip the windows related parts
 + this setup is highly flexible - if you don't wanna use noalbs just configure the `docker-compose.yml` file and replace it with some other SRT solution. you can just re-configure ports and the container name via environment variables that are used in the `entrypoint.sh` file
++ If you want to use v1 for some reason just run
+```
+docker-compose -f docker-compose-noalbs-v1.yml up -d
+```
+instead
 
 ## Note
 the other folders contain the docker build files for streaming on a jetson nano and srt setup to send stream data to
