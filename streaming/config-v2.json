@@ -32,14 +32,7 @@
         "name": "SLS",
         "priority": 0,
         "overrideScenes": null,
-        "dependsOn": {
-          "name": "nginx",
-          "backupScenes": {
-            "normal": "Scene 3",
-            "low": "low",
-            "offline": "Scene 2"
-          }
-        }
+        "dependsOn": null
       }
     ]
   },
