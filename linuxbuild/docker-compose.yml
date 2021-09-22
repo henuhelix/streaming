@@ -1,68 +1,42 @@
 version: '3.8'
+x-noalbs:
+  &default-noalbs-v2
+  build:
+      context: .
+      dockerfile: ./Dockerfile.noalbs-v2-sls
+  image: ${REPOSITORY_NAME}/noalbs-v2:${GLOBAL_VERSION}
+x-noalbs:
+  &default-noalbs-v1
+  build:
+      context: .
+      dockerfile: ./Dockerfile.noalbs-sls
+  image: ${REPOSITORY_NAME}/noalbs-v1:${GLOBAL_VERSION}
 services:
   belabox-srtla-receiver:
-    platform: linux/amd64
     build:
         context: .
         dockerfile: ./Dockerfile.belabox-srtla-receiver
     image: ${REPOSITORY_NAME}/${PROJECT_NAME}-belabox-srtla-receiver:${GLOBAL_VERSION}
-    container_name: ${PROJECT_NAME}-belabox-srtla-receiver
-    restart: unless-stopped
-    stdin_open: true
-    tty: true
-    ports:
-      - "5000:5000/udp"
-      - "5001:5001/udp"
-    volumes:
-      - ./entrypoint.sh:/tmp/entrypoint.sh
-    environment:
-      - SRT_ENDPOINT_ADDR=noalbs-srtla
-      - SRT_ENDPOINT_PORT=30000
-    depends_on:
-      - "noalbs-srtla"
   noalbs-srtla:
-    platform: linux/amd64
     build:
       context: .
       dockerfile: ./Dockerfile.noalbs-srtla
     image: ${REPOSITORY_NAME}/noalbs-srtla:${GLOBAL_VERSION}
-    restart: unless-stopped
-    stdin_open: true
-    tty: true
-    ports: 
-      - "30000:30000/udp"
-      - "8181:8181/tcp"
-  noalbs-sls:
-    platform: linux/amd64
-    build:
-        context: .
-        dockerfile: ./Dockerfile.noalbs-sls
+  noalbs-v1_latest:
+    *default-noalbs-v1
+  noalbs_latest:
+    <<: *default-noalbs-v1
+    image: ${REPOSITORY_NAME}/noalbs:${GLOBAL_VERSION}
+  noalbs-v1_sls_latest:
+    <<: *default-noalbs-v1
     image: ${REPOSITORY_NAME}/noalbs-sls:${GLOBAL_VERSION}
-    container_name: noalbs-sls
-    restart: unless-stopped
-    stdin_open: true
-    tty: true
-    command: npm start
-  noalbs-v2-sls:
-    platform: linux/amd64
-    build:
-        context: .
-        dockerfile: ./Dockerfile.noalbs-v2-sls
+  noalbs-v2_latest:
+    *default-noalbs-v2
+  noalbs-v2_sls_latest:
+    <<: *default-noalbs-v2
     image: ${REPOSITORY_NAME}/noalbs-v2-sls:${GLOBAL_VERSION}
-    container_name: noalbs-v2-sls
-    restart: unless-stopped
-    stdin_open: true
-    tty: true
-    command: cargo run
   srtla:
-    platform: linux/amd64
     build:
       context: .
       dockerfile: ./Dockerfile.srtla
     image: ${REPOSITORY_NAME}/srtla:${GLOBAL_VERSION}
-    restart: unless-stopped
-    stdin_open: true
-    tty: true
-    ports: 
-      - "30000:30000/udp"
-      - "8282:8282/tcp"

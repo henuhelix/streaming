@@ -1,8 +1,8 @@
 version: '3.8'
 services:
-  noalbs-sls:
-    image: ${REPOSITORY_NAME}/noalbs-v2-sls:${GLOBAL_VERSION}
-    container_name: noalbs-sls
+  noalbs-v2:
+    image: ${REPOSITORY_NAME}/noalbs-v2:${GLOBAL_VERSION}
+    container_name: noalbs-v2
     restart: unless-stopped
     stdin_open: true
     tty: true
