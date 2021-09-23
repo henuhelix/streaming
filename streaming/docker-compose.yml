@@ -17,7 +17,6 @@ services:
     restart: unless-stopped
     ports:
       - "5000:5000/udp"
-      - "5001:5001/udp"
     volumes:
       - ./entrypoint.sh:/tmp/entrypoint.sh
     environment:
