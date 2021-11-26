@@ -8,7 +8,10 @@ services:
     tty: true
     volumes:
       - ./.env:/noalbs/.env
+      #single user
       - ./config-v2.json:/noalbs/config.json
+      #multi user
+      #- ./configs:/noalbs/configs
     depends_on:
       - "noalbs-srtla"
   noalbs-srtla:
