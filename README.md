@@ -54,10 +54,12 @@ the build folder contains the docker compose for building all the containers
 everything is opensource, there are no secrets about the setup
 
 # NGINX-RTMP (for example for phone streams or on Go Pro 10)
-place the files from streaming/nginx.conf and streaming/docker-compose-nginx-rtmp.yml into a directory on your jetson and start it up via
+place the files from [streaming/nginx.conf](streaming/nginx.conf) and [streaming/docker-compose-nginx-rtmp.yml](streaming/docker-compose-nginx-rtmp.yml) into a directory on your jetson and start it up via
 ```
 sudo docker-compose -f docker-compose-nginx-rtmp.yml up -d
 ```
+[LARIX IOS](https://apps.apple.com/us/app/larix-broadcaster/id1042474385)
+[LARIX ANDROID](https://play.google.com/store/apps/details?id=com.wmspanel.larix_broadcaster)
 
 on your phone install LARIX and connect to the jetson locally
 setup LARIX to connect to the jetson like this
