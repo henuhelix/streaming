@@ -59,6 +59,7 @@ place the files from [streaming/nginx.conf](streaming/nginx.conf) and [streaming
 sudo docker-compose -f docker-compose-nginx-rtmp.yml up -d
 ```
 [LARIX IOS](https://apps.apple.com/us/app/larix-broadcaster/id1042474385)
+
 [LARIX ANDROID](https://play.google.com/store/apps/details?id=com.wmspanel.larix_broadcaster)
 
 on your phone install LARIX and connect to the jetson locally
