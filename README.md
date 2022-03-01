@@ -68,3 +68,6 @@ on belaUI select the pipeline
 h265_rtmp_localhost_publish_live
 ```
 and the usual SRT server settings
+
+example how it looks like when everything is working:
+![image](https://user-images.githubusercontent.com/34907770/156200207-f2ec9425-8289-4722-bc93-daefbdbc8734.png)
