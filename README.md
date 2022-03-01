@@ -53,7 +53,7 @@ the build folder contains the docker compose for building all the containers
 
 everything is opensource, there are no secrets about the setup
 
-#NGINX-RTMP (for example for phone streams or on Go Pro 10)
+# NGINX-RTMP (for example for phone streams or on Go Pro 10)
 place the files into a directory on your jetson and start it up via
 ```
 sudo docker-compose up -d
