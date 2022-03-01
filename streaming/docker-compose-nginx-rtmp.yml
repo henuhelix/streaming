@@ -1,0 +1,9 @@
+version: '3.5'
+
+services:
+  nginx-rtmp:
+    image: moothecow/jetson-nano-nginx-rtmp:1.1
+    network_mode: host
+    restart: always
+    volumes:
+      - "./nginx.conf:/etc/nginx/nginx.conf.template"
