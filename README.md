@@ -52,3 +52,19 @@ the other folders contain the docker build files for streaming on a jetson nano 
 the build folder contains the docker compose for building all the containers
 
 everything is opensource, there are no secrets about the setup
+
+#NGINX-RTMP (for example for phone streams or on Go Pro 10)
+place the files into a directory on your jetson and start it up via
+```
+sudo docker-compose up -d
+```
+
+on your phone install LARIX and connect to the jetson locally
+setup LARIX to connect to the jetson like this
+`rtmp://[INTERNAL_IP_OF_JETSON]:1935/publish/live`
+
+on belaUI select the pipeline 
+```
+h265_rtmp_localhost_publish_live
+```
+and the usual SRT server settings
