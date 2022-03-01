@@ -4,7 +4,7 @@ RUN apk update &&\
     apk upgrade &&\ 
     apk add --no-cache git
 WORKDIR /tmp/build
-RUN git clone https://github.com/715209/nginx-obs-automatic-low-bitrate-switching.git noalbs
+RUN git clone --branch master https://github.com/715209/nginx-obs-automatic-low-bitrate-switching.git noalbs
 WORKDIR /tmp/build/noalbs
 RUN npm install --production
 
