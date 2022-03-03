@@ -74,3 +74,6 @@ and the usual SRT server settings
 
 example how it looks like when everything is working:
 ![image](https://user-images.githubusercontent.com/34907770/156200207-f2ec9425-8289-4722-bc93-daefbdbc8734.png)
+
+## Note
+This requires you to have a local network. so you need some kind of small portable wifi-router handling it)
