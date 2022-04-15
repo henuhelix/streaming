@@ -40,6 +40,15 @@ docker-compose -f docker-compose-noalbs-v2.yml up -d
 docker-compose -f docker-compose-noalbs-v2.yml up -d
 ```
 
+## OBS configuration
+You need to add a new media source (see screenshot)
+Input
+```
+srt://127.0.0.1:30000?streamid=play/live/feed1
+```
+![image](https://user-images.githubusercontent.com/34907770/163650863-7edf93eb-e6bf-4288-aef7-e406b04890bb.png)
+
+
 ## Troubleshooting
 + you can still access the normal srt server without bonding feature using udp port 30000 as a fallback (you'd need to add that to portforwarding though)
 + you can access the stats page via the ip of your windows machine using port 8282 in your browser if you need to fetch the statistics (bitrate/tts) that can be used in OBS
