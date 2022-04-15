@@ -10,8 +10,12 @@ docker-compose -f docker-compose-noalbs-v2.yml up -d
 ```
 
 ## Changelog:
+1.6: updated srtla-receiver
+1.5: hotfixes
+1.4: hotfixes
+1.3: hotfixes
+1.2: hotfixes
 1.1: applied critical patch from b3cks repo
-
 1.0: first docker release
 
 ## Pre-Requirements (windows)
