@@ -5,7 +5,8 @@ the streaming folder contains the docker compose for running the containers that
 just modify the `.env` file and increase the version number (see changelog)
 and rerun
 ```
-sudo docker-compose -f docker-compose-noalbs-v2.yml up -d
+docker-compose -f docker-compose-noalbs-v2.yml pull
+docker-compose -f docker-compose-noalbs-v2.yml up -d
 ```
 
 ## Changelog:
@@ -32,7 +33,7 @@ sudo docker-compose -f docker-compose-noalbs-v2.yml up -d
 + make sure docker for windows is started and the containers are switched to "linux containers" (see https://docs.docker.com/docker-for-windows/)
 + open a Terminal (suggestion: https://www.microsoft.com/store/productId/9N8G5RFZ9XK3 ) browse to that directory and type
 ```
-sudo docker-compose -f docker-compose-noalbs-v2.yml up -d
+docker-compose -f docker-compose-noalbs-v2.yml up -d
 ```
 
 ## Troubleshooting
@@ -42,7 +43,7 @@ sudo docker-compose -f docker-compose-noalbs-v2.yml up -d
 + this setup is highly flexible - if you don't wanna use noalbs just configure the `docker-compose.yml` file and replace it with some other SRT solution. you can just re-configure ports and the container name via environment variables that are used in the `entrypoint.sh` file
 + If you want to use v1 for some reason just run
 ```
-sudo docker-compose --env-file .env.v1 -f docker-compose-noalbs-v1.yml up -d
+docker-compose --env-file .env.v1 -f docker-compose-noalbs-v1.yml up -d
 ```
 instead
 
@@ -56,7 +57,7 @@ everything is opensource, there are no secrets about the setup
 # NGINX-RTMP (for example for phone streams or on Go Pro 10)
 place the files from [streaming/nginx.conf](streaming/nginx.conf) and [streaming/docker-compose-nginx-rtmp.yml](streaming/docker-compose-nginx-rtmp.yml) into a directory on your jetson and start it up via
 ```
-sudo docker-compose -f docker-compose-nginx-rtmp.yml up -d
+docker-compose -f docker-compose-nginx-rtmp.yml up -d
 ```
 [LARIX IOS](https://apps.apple.com/us/app/larix-broadcaster/id1042474385)
 
