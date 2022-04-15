@@ -48,6 +48,11 @@ srt://127.0.0.1:30000?streamid=play/live/feed1
 ```
 ![image](https://user-images.githubusercontent.com/34907770/163650863-7edf93eb-e6bf-4288-aef7-e406b04890bb.png)
 
+## Nginx Stats
+the url is on: http://127.0.0.1:8282/stats
+
+as soon as the SRTLA receiver is getting data the stats will be refreshed
+
 
 ## Troubleshooting
 + you can still access the normal srt server without bonding feature using udp port 30000 as a fallback (you'd need to add that to portforwarding though)
